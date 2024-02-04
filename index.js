@@ -14,6 +14,10 @@ const websiteLink = document.querySelector(".link-para");
 const twitter = document.querySelector(".twitter-para")
 const email = document.querySelector(".email-para");
 const searchBtn=document.querySelector(".search-button");
+const theme=document.querySelector(".theme");
+let darkMode=false;
+const themeName=document.querySelector(".theme-name");
+const themeIcon=document.querySelector(".theme-icon");
 
 
 entryField.addEventListener('input', (e) => {
@@ -93,5 +97,58 @@ searchBtn.addEventListener("click", (e) => {
         fetchDetails(githubID);
 });
 
+theme.addEventListener("click", ()=>{
+    if(darkMode==false){
+        darkModeProperties();
+    }
+    else{
+        lightModeProperties();
+    }
+})
 
+function darkModeProperties(){
+    themeName.textContent="LIGHT";
+    themeIcon.src="sun.svg";
+    darkMode=true;
+    localStorage.setItem("dark-mode", true);  console.log("setting dark mode to false");
 
+    console.log("setting dark mode to true");
+
+}
+function lightModeProperties(){
+    themeName.textContent="DARK";
+    themeIcon.src="moon-fill.svg";
+    darkMode = false;
+    console.log("darkmode changed to " + darkMode);
+  
+    localStorage.setItem("dark-mode", false);
+    console.log("setting dark mode to false");
+}
+
+function init() {
+    //initialise dark-mode variable to false;
+    //darkMode = true -> dark mode enable karna h 
+    //darMode = false -> light mode enable karna h 
+    darkMode = false;
+  
+    //HW
+  // const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+    const value = localStorage.getItem("dark-mode");
+  
+    if(value === null) {
+      console.log("null k andar");
+      localStorage.setItem("dark-mode", darkMode);
+      lightModeProperties();
+    }
+    else if(value == "true") {
+      console.log("truer k andar");
+      darkModeProperties();
+    }
+    else if(value == "false") {
+      console.log("false k andar");
+      lightModeProperties();
+    }
+  }
+  
+  init();

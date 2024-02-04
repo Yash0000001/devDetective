@@ -9,27 +9,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#f6f8ff] text-sm w-[100%] relative h-[100vh]">
+<body class="bg-[#f6f8ff] dark:bg-[#141D2F] text-sm w-[100%] relative h-[100vh]">
     <div class="wrapper w-full h-full flex flex-col items-center justify-center gap-3">
         <!-- header and theme -->
         <div class="header w-[450px] gap-9 flex items-center justify-between">
-            <h2 class="icon text-[#4b6a9b] font-black text-2xl">DevDetective</h2>
-            <div class="theme flex justify-between items-center w-[75px] tracking-[2.5px] font-bold decoration-[#4b6a9b] hover:cursor-pointer">
-                <p class=" text-[#4b6a9b]">DARK</p>
-                <p class="text-[#4b6a9b]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#4b6a9b" viewBox="0 0 256 256"><path d="M235.54,150.21a104.84,104.84,0,0,1-37,52.91A104,104,0,0,1,32,120,103.09,103.09,0,0,1,52.88,57.48a104.84,104.84,0,0,1,52.91-37,8,8,0,0,1,10,10,88.08,88.08,0,0,0,109.8,109.8,8,8,0,0,1,10,10Z"></path></svg>
+            <h2 class="icon text-[#4b6a9b] dark:text-white font-black text-2xl">DevDetective</h2>
+            <div class="theme flex justify-between items-center w-[75px] tracking-[2.5px] font-bold decoration-[#4b6a9b] dark:decoration-white hover:cursor-pointer">
+                <p class=" text-[#4b6a9b] dark:text-white theme-name">DARK</p>
+                <p class="text-[#4b6a9b] dark:text-white">
+                    <img src="" alt="" class="theme-icon">
                 </p>
             </div>
         </div>
 
 
         <!-- search bar -->
-        <div class="search-container w-600px relative bg-[#fefefe] rounded-[15px] h-[50px] flex items-center w-[450px] top-4 p-[6px] justify-between">
+        <div class="search-container w-600px relative bg-[#fefefe] dark:bg-[#1E2A47] rounded-[15px] h-[50px] flex items-center w-[450px] top-4 p-[6px] justify-between">
             <div class="flex">
                 <p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0079ff" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
                 </p>
-                <input type="text" placeholder="Github Username " id="entry-field" required class="w-[250px] outline-none bg-none text-[#4b6a9b] pl-[5px] placeholder:text-[#4b6a9b] placeholder:-tracking-[0.5px] placeholder:text-sm">
+                <input type="text" placeholder="Github Username " id="entry-field" required class="w-[250px] outline-none bg-none text-[#4b6a9b] dark:text-white pl-[5px] placeholder:text-[#4b6a9b] dark:placeholder:dark:text-white dark:bg-[#1e2a47] placeholder:-tracking-[0.5px] placeholder:text-sm">
             </div>
             <!-- <div class="error">
                 <p id="no-results">no search results</p>
@@ -41,31 +41,31 @@
         </div>
 
         <!-- profile card -->
-        <div class="profile-container bg-[#fefefe] rounded-2xl w-[450px] mt-[25px] p-[24px] flex gap-6 " data-profile>
+        <div class="profile-container bg-[#fefefe] dark:bg-[#1E2A47] rounded-2xl w-[450px] mt-[25px] p-[24px] flex gap-6 " data-profile>
             <div class="w-100px">
                 <img src="" alt="profile-image" profile-img class="min-w-[90px] rounded-[90px]">
             </div>
             <div>
                 <div class="flex justify-between w-[300px] items-center tracking-tighter font-bold">
-                    <p class="name text-3xl text-[#2b3442]"></p>
+                    <p class="name text-3xl text-[#2b3442] dark:text-white"></p>
                     <p class="date text-gray-500 opacity-70"></p>
                 </div>
                
                 <p class="username text-[#0079ff] tracking-tighter underline font-semibold mt-[6px]"></p>
-                <p class="info mt-[6px] mb-[30px]"></p>
+                <p class="info mt-[6px] mb-[30px] text-[#4b6a9b] dark:text-white"></p>
                 <div>
-                    <div class="flex justify-between h-[100px] bg-[#f6f8ff] rounded-[20px] pt-[30px] pb-[30px] pl-[20px] pr-[20px] mb-[20px]">
+                    <div class="flex justify-between h-[100px] bg-[#f6f8ff] dark:bg-[#141D2F] rounded-[20px] pt-[30px] pb-[30px] pl-[20px] pr-[20px] mb-[20px]">
                         <div class="flex flex-col items-center justify-between gap-2">
                             <p class="text-gray-500 tracking-tighter">Repos</p>
-                            <p class="repo font-extrabold"></p>
+                            <p class="repo font-extrabold dark:text-white"></p>
                         </div>
                         <div class="flex flex-col items-center justify-between gap-2">
                             <p class="text-gray-500 tracking-tighter">Followers</p>
-                            <p class="followers font-extrabold"></p>
+                            <p class="followers font-extrabold dark:text-white"></p>
                         </div>
                         <div class="flex flex-col items-center justify-between gap-2">
                             <p class="text-gray-500 tracking-tighter">Following</p>
-                            <p class="following font-extrabold"></p>
+                            <p class="following font-extrabold dark:text-white"></p>
                         </div>
                        
                         
