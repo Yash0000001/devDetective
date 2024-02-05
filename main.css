@@ -10,12 +10,16 @@
 .profile-container{
     display:none;
 }
-.active{
-    display: flex;
+.download{
+    display: none;
 }
+
 .search-container{
     box-shadow:  16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 .blue-color {
     color: #4b6a9b;
+}
+.active{
+    display: flex;
 }
