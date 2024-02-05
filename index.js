@@ -98,57 +98,63 @@ searchBtn.addEventListener("click", (e) => {
 });
 
 theme.addEventListener("click", ()=>{
-    if(darkMode==false){
-        darkModeProperties();
-    }
-    else{
-        lightModeProperties();
+    let body = document.body;
+    if(body.classList.contains("dark")){
+        body.classList.remove("dark");
+        themeName.textContent="DARK";
+        themeIcon.src="moon-fill.svg";
+    } else {
+        body.classList.add("dark");
+        themeName.textContent="LIGHT";
+        themeIcon.src="sun.svg";
     }
 })
 
-function darkModeProperties(){
-    themeName.textContent="LIGHT";
-    themeIcon.src="sun.svg";
-    darkMode=true;
-    localStorage.setItem("dark-mode", true);  console.log("setting dark mode to false");
+// function darkModeProperties(){
+//     document.body.classlist.add("dark");
+//     themeName.textContent="LIGHT";
+//     themeIcon.src="sun.svg";
+//     darkMode=true;
+//     localStorage.setItem("dark-mode", true);  console.log("setting dark mode to false");
 
-    console.log("setting dark mode to true");
+//     console.log("setting dark mode to true");
 
-}
-function lightModeProperties(){
-    themeName.textContent="DARK";
-    themeIcon.src="moon-fill.svg";
-    darkMode = false;
-    console.log("darkmode changed to " + darkMode);
+// }
+// function lightModeProperties(){
+//     document.body.classlist.remove("dark");
+//     themeName.textContent="DARK";
+//     themeIcon.src="moon-fill.svg";
+//     darkMode = false;
+//     console.log("darkmode changed to " + darkMode);
   
-    localStorage.setItem("dark-mode", false);
-    console.log("setting dark mode to false");
-}
+//     localStorage.setItem("dark-mode", false);
+//     console.log("setting dark mode to false");
+// }
 
-function init() {
-    //initialise dark-mode variable to false;
-    //darkMode = true -> dark mode enable karna h 
-    //darMode = false -> light mode enable karna h 
-    darkMode = false;
+// function init() {
+//     //initialise dark-mode variable to false;
+//     //darkMode = true -> dark mode enable karna h 
+//     //darMode = false -> light mode enable karna h 
+//     darkMode = false;
   
-    //HW
-  // const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+//     //HW
+//   // const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   
-    const value = localStorage.getItem("dark-mode");
+//     const value = localStorage.getItem("dark-mode");
   
-    if(value === null) {
-      console.log("null k andar");
-      localStorage.setItem("dark-mode", darkMode);
-      lightModeProperties();
-    }
-    else if(value == "true") {
-      console.log("truer k andar");
-      darkModeProperties();
-    }
-    else if(value == "false") {
-      console.log("false k andar");
-      lightModeProperties();
-    }
-  }
+//     if(value === null) {
+//       console.log("null k andar");
+//       localStorage.setItem("dark-mode", darkMode);
+//       lightModeProperties();
+//     }
+//     else if(value == "true") {
+//       console.log("truer k andar");
+//       darkModeProperties();
+//     }
+//     else if(value == "false") {
+//       console.log("false k andar");
+//       lightModeProperties();
+//     }
+//   }
   
-  init();
+//   init();
